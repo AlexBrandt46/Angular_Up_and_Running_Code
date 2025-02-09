@@ -2,7 +2,7 @@
   <div class="name">
     {{name + ' (' + code + ')'}}
   </div>
-  <div class="price">
+  <div class="price" [class]="positiveChange ? 'positive' : 'negative'">
     $ {{price}}
   </div>
 </div>
