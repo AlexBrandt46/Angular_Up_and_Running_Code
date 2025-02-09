@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-stock-item',
@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './stock-item.component.html',
   styleUrl: './stock-item.component.scss'
 })
-export class StockItemComponent {
+export class StockItemComponent implements OnInit {
+  constructor() {
 
+  }
+
+  ngOnInit(): void {
+    
+  }
 }
