@@ -33,8 +33,8 @@ export class StockItemComponent implements OnInit {
     this.favorite = false;
   }
 
-  toggleFavorite(): void {
-    console.log('We are toggling the favorite state for this stock.');
+  toggleFavorite(event: MouseEvent): void {
+    console.log('We are toggling the favorite state for this stock.', event);
     this.favorite = !this.favorite;
   }
 }
