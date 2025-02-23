@@ -1,0 +1,41 @@
+.productContainer {
+  border-radius: 5px;
+  border: 2px solid rgb(110, 110, 110);
+  padding: 1.5vh 0.5vw;
+  display: flex;
+
+  .itemImgContainer {
+    margin-right: 1vw;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+
+  .itemHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .itemNameContainer {
+      width: 100%;
+    }
+
+    .priceContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.onSaleBackground {
+  background-color: green;
+  color: white;
+}
+
+h4 {
+  margin: 0;
+}
