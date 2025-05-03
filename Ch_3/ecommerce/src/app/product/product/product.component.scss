@@ -3,6 +3,7 @@
   border: 2px solid rgb(110, 110, 110);
   padding: 1.5vh 0.5vw;
   display: flex;
+  margin-bottom: 2vh;
 
   .itemImgContainer {
     margin-right: 1vw;
@@ -32,13 +33,13 @@
         margin: 0;
       }
 
-      #prodQuant {
+      .prodQuant {
         margin-left: 5vw;
       }
     }
   }
 
-  #quantBtnsContainer {
+  .quantBtnsContainer {
     float: right;
 
     .quantBtn {
@@ -46,17 +47,17 @@
       border-radius: 0;
     }
 
-    #btnIncrease {
+    .btnIncrease {
       border-bottom-left-radius: 2px;
       border-top-left-radius: 2px;
     }
 
-    #btnDecrease {
+    .btnDecrease {
       border-top-right-radius: 2px;
       border-bottom-right-radius: 2px;
     }
 
-    #btnDecrease:disabled {
+    .btnDecrease:disabled {
       background-color: lightgray;
     }
   }
