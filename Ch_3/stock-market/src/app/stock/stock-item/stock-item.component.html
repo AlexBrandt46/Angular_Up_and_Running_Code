@@ -2,7 +2,7 @@
   <div class="name">
     {{stock.name + ' (' + stock.code + ')'}}
   </div>
-  <div class="price" [style]="stockStyles">
+  <div class="price" [class]="stockClasses">
     $ {{stock.price}}
   </div>
   <button (click)="toggleFavorite($event)" [disabled]="stock.favorite">Add to Favorite</button>
