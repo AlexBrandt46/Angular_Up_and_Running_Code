@@ -1,11 +1,14 @@
-<div class="stock-container">
-  <div class="name">
-    {{stock.name + ' (' + stock.code + ')'}}
+@for (stock of stocks; track stock.code; let i = $index) {
+  <div class="stock-container">
+    <div class="name">
+      {{stock.name + ' (' + stock.code + ')'}}
+    </div>
+    <div class="price" [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
+      $ {{stock.price}}
+    </div>
+    @if (!stock.favorite) {
+    <button (click)="toggleFavorite($event, i)" [disabled]="stock.favorite">Add to Favorite</button>
+    }
   </div>
-  <div class="price" [class]="stockClasses">
-    $ {{stock.price}}
-  </div>
-  @if (!stock.favorite) {
-    <button (click)="toggleFavorite($event)">Add to Favorite</button>
-  }
-</div>
+}
+
