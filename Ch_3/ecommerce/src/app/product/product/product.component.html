@@ -1,0 +1,27 @@
+<div class="productContainer" [class.onSaleBackground]="product.onSale">
+  <div class="itemImgContainer">
+    <img [src]="product.imageUrl" alt="Alt Text" />
+  </div>
+  <div class="itemInfoContainer">
+    <div class="itemHeaderContainer">
+      <div class="itemNameContainer">
+        <h4 class="itemName">
+          {{product.name}}
+        </h4>
+      </div>
+      <div class="priceContainer">
+        <p>
+          <b>${{product.price}}</b>
+        </p>
+        <p id="prodQuant">{{product.quantity}} in Cart</p>
+      </div>
+    </div>
+    <div descriptionContainer>
+      <p>{{product.description}}</p>
+    </div>
+    <div id="quantBtnsContainer">
+      <button id="btnIncrease" class="quantBtn" (click)="changeCount($event, true)">+</button>
+      <button id="btnDecrease" class="quantBtn" (click)="changeCount($event, false)" [disabled]="product.quantity == 0">-</button>
+    </div>
+  </div>
+</div>

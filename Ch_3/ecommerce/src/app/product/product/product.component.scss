@@ -1,0 +1,77 @@
+.productContainer {
+  border-radius: 5px;
+  border: 2px solid rgb(110, 110, 110);
+  padding: 1.5vh 0.5vw;
+  display: flex;
+
+  .itemImgContainer {
+    margin-right: 1vw;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+
+  .itemHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .itemNameContainer {
+      width: 100%;
+    }
+
+    .priceContainer {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      p {
+        margin: 0;
+      }
+
+      #prodQuant {
+        margin-left: 5vw;
+      }
+    }
+  }
+
+  #quantBtnsContainer {
+    float: right;
+
+    .quantBtn {
+      font-size: 1.1em;
+      border-radius: 0;
+    }
+
+    #btnIncrease {
+      border-bottom-left-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+
+    #btnDecrease {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+
+    #btnDecrease:disabled {
+      background-color: lightgray;
+    }
+  }
+}
+
+.onSaleBackground {
+  background-color: green;
+  color: white;
+}
+
+.regularPriceBackground {
+  background-color: white;
+  color: black;
+}
+
+h4 {
+  margin: 0;
+}
