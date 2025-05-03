@@ -5,5 +5,7 @@
   <div class="price" [class]="stockClasses">
     $ {{stock.price}}
   </div>
-  <button (click)="toggleFavorite($event)" [disabled]="stock.favorite">Add to Favorite</button>
+  @if (!stock.favorite) {
+    <button (click)="toggleFavorite($event)">Add to Favorite</button>
+  }
 </div>
