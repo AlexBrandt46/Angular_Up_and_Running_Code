@@ -1,0 +1,39 @@
+@for (product of products; track product.prodId; let i = $index) {
+  <div class="productContainer" [class]="productClasses[i]">
+    <div class="itemImgContainer">
+      <img [src]="product.imageUrl" alt="Alt Text" />
+    </div>
+    <div class="itemInfoContainer">
+      <div class="itemHeaderContainer">
+        <div class="itemNameContainer">
+          <h4 class="itemName">
+            {{product.name}}
+          </h4>
+        </div>
+        <div class="priceContainer">
+          <p>
+            <b>${{product.price}}</b>
+          </p>
+          <p class="prodQuant">{{product.quantity}} in Cart</p>
+        </div>
+      </div>
+      <div descriptionContainer>
+        <p>{{product.description}}</p>
+      </div>
+      <div class="quantBtnsContainer">
+        <button class="quantBtn btnIncrease" (click)="changeCount($event, i, true)">+</button>
+        @if (product.quantity != 0) {
+          <button class="quantBtn btnDecrease" (click)="changeCount($event, i, false)">-</button>
+        }
+      </div>
+      <div class="quantDropdownContainer">
+        <select id="quantDropdown" name="quantities">
+          @for (num of quantOptions; track $index) {
+            <option value="num">{{num}}</option>
+          }
+        </select>
+      </div>
+    </div>
+  </div>
+}
+
