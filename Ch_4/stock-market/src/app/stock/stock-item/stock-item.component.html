@@ -1,14 +1,16 @@
-@for (stock of stocks; track stock.code; let i = $index) {
+<!-- @for (stock of stocks; track stock.code; let i = $index) { -->
+  <!-- TODO: Research how to guarantee that values won't be null on input signals -->
+  <!-- TODO: Read more about input signals and signals in general -->
   <div class="stock-container">
     <div class="name">
-      {{stock.name + ' (' + stock.code + ')'}}
+      {{stock()!.name + ' (' + stock()!.code + ')'}}
     </div>
-    <div class="price" [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
-      $ {{stock.price}}
+    <div class="price" [class]="stock()!.isPositiveChange() ? 'positive' : 'negative'">
+      $ {{stock()!.price}}
     </div>
-    @if (!stock.favorite) {
-      <button (click)="toggleFavorite($event, i)" [disabled]="stock.favorite">Add to Favorite</button>
+    @if (!stock()!.favorite) {
+      <button (click)="toggleFavorite($event)" [disabled]="stock()!.favorite">Add to Favorite</button>
     }
   </div>
-}
+<!-- } -->
 
