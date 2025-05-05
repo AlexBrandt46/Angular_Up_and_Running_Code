@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 import { Stock } from '../../model/stock'
 
@@ -9,18 +9,15 @@ import { Stock } from '../../model/stock'
 })
 export class StockItemComponent {
 
-  //public stock: Stock;
   public stock = input<Stock>();
+  public toggleFavorite = output<Stock>();
   //public stockClasses;
 
-  // TODO: Research why TypeScript threw errors when leaving variables uninitialized.
   constructor() {
-    console.log(this.stock())
-    console.log('test')
+    console.log('StockItemComponent constructor()')
   }
 
-  toggleFavorite(event: MouseEvent): void {
-    console.log('We are toggling the favorite state for this stock.', event);
-    this.stock()!.favorite = !this.stock()!.favorite;
+  onToggleFavorite(event: MouseEvent): void {
+    this.toggleFavorite.emit(this.stock()!);
   }
 }

@@ -28,6 +28,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("init")
-    
+  }
+
+  onToggleFavorite(stock: Stock) : void {
+    console.log('Favorite for stock', stock, ' was triggered.');
+    this.stock.favorite = !this.stock.favorite;
   }
 }
