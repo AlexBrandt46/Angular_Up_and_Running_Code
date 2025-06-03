@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnChanges, OnDestroy, DoCheck,
+  AfterViewChecked, AfterViewInit, AfterContentChecked, AfterContentInit
+ } from '@angular/core';
 import { StockItemComponent } from "./stock/stock-item/stock-item.component";
 import { Stock } from './model/stock';
 
@@ -8,7 +10,9 @@ import { Stock } from './model/stock';
   styleUrl: './app.component.scss',
   imports: [StockItemComponent]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges, OnDestroy, DoCheck,
+  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit {
+
   title = 'Stock Market App';
 
   public stocks: Array<Stock> = [];
@@ -28,7 +32,35 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("init")
+    console.log("App Component - Init");
+  }
+
+  ngAfterViewInit(): void {
+    console.log('App Component - After View Init');
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('App Component - After View Checked');
+  }
+
+  ngAfterContentInit(): void {
+    console.log('App Component - After Content Init');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('App Component - After Content Checked');
+  }
+
+  ngDoCheck(): void {
+      console.log('App Component - Do Check');
+  }
+
+  ngOnDestroy(): void {
+    console.log('App Component - On Destroy');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log('App Component - On Changes - ', changes)
   }
 
   onToggleFavorite(stock: Stock) : void {
