@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   public stocks: Array<Stock> = [];
   public stock: Stock;
+  private counter: number = 1;
 
   constructor() {
     console.log("constructor1")
@@ -31,7 +32,23 @@ export class AppComponent implements OnInit {
   }
 
   onToggleFavorite(stock: Stock) : void {
+    // This will update the value in the stock item component
+    // because it is triggered as a result of an event binding
+    // from the stock item component.
     console.log('Favorite for stock', stock, ' was triggered.');
     this.stock.favorite = !this.stock.favorite;
+  }
+
+  changeStockObject() {
+    // This will update the value in the stock item component
+    // because we are creating a new reference for the stock input.
+    this.stock = new Stock(`Test Stock Company - ${ this.counter++ }`, 'TSC', 85, 80);
+  }
+
+  changeStockPrice() {
+    // This will not update the value in the stock item component
+    // because it is changeing the same reference and angular will
+    // not check for it in the OnPush change detection strategy.
+    this.stock.price += 10;
   }
 }

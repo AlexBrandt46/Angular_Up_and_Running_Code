@@ -9,8 +9,9 @@
       $ {{stock()!.price}}
     </div>
     @if (!stock()!.favorite) {
-      <button (click)="onToggleFavorite($event)">Add to Favorite</button>
+      <button id="btnAddFavorite" (click)="onToggleFavorite($event)">Add to Favorite</button>
     }
+    <button (click)="changeStockPrice()">Change Price</button>
   </div>
 <!-- } -->
 
