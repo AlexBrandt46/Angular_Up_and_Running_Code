@@ -83,4 +83,8 @@ export class AppComponent implements OnInit, OnChanges, OnDestroy, DoCheck,
     // not check for it in the OnPush change detection strategy.
     this.stock.price += 10;
   }
+
+  testMethod() {
+    console.log('Test method in AppComponent triggered.')
+  }
 }

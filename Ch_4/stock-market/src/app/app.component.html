@@ -2,7 +2,12 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <app-stock-item [stock]="stock" (toggleFavorite)="onToggleFavorite($event)"></app-stock-item>
+  <app-stock-item [stock]="stock" (toggleFavorite)="onToggleFavorite($event)">
+    <button (click)="testMethod()">With Button 1</button>
+  </app-stock-item>
+  <app-stock-item [stock]="stock">
+    No buttons for you!
+  </app-stock-item>
   <button (click)="changeStockObject()">Change Stock</button>
   <button (click)="changeStockPrice()">Change Price</button>
 </div>
